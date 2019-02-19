@@ -110,14 +110,14 @@ public class setupAcount extends AppCompatActivity {
         };
     }
 
-    /* Update ui text.*/
+    /* Update ui text.
     private void updateText()
     {
         String userInputText = changeTextEditor.getText().toString();
         changeTextTextView.setText(userInputText);
     }
 
-    /* Create Handler object in main thread. */
+    /* Create Handler object in main thread.
     private void createUpdateUiHandler()
     {
         if(updateUIHandler == null)
@@ -135,7 +135,7 @@ public class setupAcount extends AppCompatActivity {
                 }
             };
         }
-    }
+    }*/
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -172,112 +172,6 @@ public class setupAcount extends AppCompatActivity {
             public void onClick(View view) {
                 hideView(passwd);
                 showView(contact);
-            }
-        });
-
-        /*Select Contacts for the family, friends, etc*/
-        // Get the floating action button
-        final FloatingActionButton f1 = (FloatingActionButton) findViewById(R.id.floatingActionButton);
-        final FloatingActionButton f2 = (FloatingActionButton) findViewById(R.id.floatingActionButton2);
-        final FloatingActionButton f3 = (FloatingActionButton) findViewById(R.id.floatingActionButton3);
-        final FloatingActionButton f4 = (FloatingActionButton) findViewById(R.id.floatingActionButton4);
-
-        // Get the text view
-        final TextView t1 = (TextView) findViewById(R.id.textView5);
-        final TextView t2 = (TextView) findViewById(R.id.textView6);
-        final TextView t3 = (TextView) findViewById(R.id.textView8);
-        final TextView t4 = (TextView) findViewById(R.id.textView7);
-
-        // Setup click listeners for the the floating action button
-        f1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // TODO Call the contact list selector and get contact
-                //
-                startContactIntent();
-                runOnUiThread(new Runnable() {
-                    public void run() {
-                        //
-                        f1.setVisibility(View.GONE);
-                        t1.setVisibility(View.VISIBLE);
-                        t1.setText(name);
-                    }
-                });
-                contact.invalidate();
-                contact.requestLayout();
-                //t1.setVisibility(View.VISIBLE);
-
-
-                // TODO Set contact
-                //
-
-            }
-        });
-
-        f2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // TODO Call the contact list selector and get contact
-                //
-                startContactIntent();
-                runOnUiThread(new Runnable() {
-                    public void run() {
-                        //t1.setText(name);
-                        f2.setVisibility(View.GONE);
-                        t2.setVisibility(View.VISIBLE);
-                        t2.setText(name);
-                    }
-                });
-
-                t2.invalidate();
-                t2.requestLayout();
-                //t2.setVisibility(View.VISIBLE);
-
-                // TODO Set contact
-                //
-
-            }
-        });
-
-        f3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // TODO Call the contact list selector and get contact
-                //
-                startContactIntent();
-                runOnUiThread(new Runnable() {
-                    public void run() {
-                        t3.setText(name);
-                        f3.setVisibility(View.GONE);
-                        t3.setVisibility(View.VISIBLE);
-                    }
-                });
-                //t3.setVisibility(View.VISIBLE);
-
-                // TODO Set contact
-                //
-
-            }
-        });
-
-        f4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // TODO Call the contact list selector and get contact
-                //
-                startContactIntent();
-                runOnUiThread(new Runnable() {
-                    public void run() {
-                        t1.setText(name);
-                        f4.setVisibility(View.GONE);
-                        t4.setVisibility(View.VISIBLE);
-                    }
-                });
-                //t4.setVisibility(View.VISIBLE);
-
-                // TODO Set contact
-                //
-
             }
         });
 

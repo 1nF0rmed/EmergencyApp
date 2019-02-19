@@ -46,8 +46,8 @@ public class mainIntro extends MaterialIntroActivity {
                         .build());
 
         addSlide(new SlideFragmentBuilder()
-                        .backgroundColor(R.color.slide3)
-                        .buttonsColor(R.color.slide4)
+                        .backgroundColor(R.color.slide4)
+                        .buttonsColor(R.color.slide3)
                         .image(R.drawable.fire_station)
                         .title("Find Nearby Fire Stations")
                         .build());
@@ -60,6 +60,13 @@ public class mainIntro extends MaterialIntroActivity {
                         .build());
 
         addSlide(new SlideFragmentBuilder()
+                        .backgroundColor(R.color.slide4)
+                        .buttonsColor(R.color.slide3)
+                        .title("Find Nearby Ambulances")
+                        .image(R.drawable.medical)
+                        .build());
+
+        addSlide(new SlideFragmentBuilder()
                         .backgroundColor(R.color.slide3)
                         .buttonsColor(R.color.slide4)
                         .image(R.drawable.search_deep)
@@ -68,8 +75,8 @@ public class mainIntro extends MaterialIntroActivity {
                         .build());
 
         addSlide(new SlideFragmentBuilder()
-                        .backgroundColor(R.color.slide3)
-                        .buttonsColor(R.color.slide4)
+                        .backgroundColor(R.color.slide4)
+                        .buttonsColor(R.color.slide3)
                         .image(R.drawable.panic)
                         .title("Panic Mode")
                         .description("When your phone signal is low, we send an automated message to your family and friends")
