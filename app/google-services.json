@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "657224913614",
+    "firebase_url": "https://joma-bot.firebaseio.com",
+    "project_id": "joma-bot",
+    "storage_bucket": "joma-bot.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:657224913614:android:ac4d735c435151d0",
+        "android_client_info": {
+          "package_name": "com.example.a1nf0rmed.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "657224913614-n1et1jm2nh62h8kbthn4jactm68ler87.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.a1nf0rmed.myapplication",
+            "certificate_hash": "557b9c4e92e4ddbfbdc1ad935962d711e8d29cc6"
+          }
+        },
+        {
+          "client_id": "657224913614-hk72sa1l1qh2uorjgcb41lk839ldhu0a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNzMWBYIYo5P5l8FciM9NFnxO5ESh5Zos"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "657224913614-hk72sa1l1qh2uorjgcb41lk839ldhu0a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
