@@ -154,6 +154,15 @@ public class setupAcount extends AppCompatActivity {
         contact.setVisibility(View.GONE);
 
         /* Setup the click listeners */
+        final Button b1 = (Button) findViewById(R.id.setup_next2);
+        b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(setupAcount.this, QuickView.class);
+                startActivity(intent);
+                finish();
+            }
+        });
         // Setup Next click
         Button next = (Button) findViewById(R.id.setup_next);
         next.setOnClickListener(new View.OnClickListener() {
@@ -162,6 +171,9 @@ public class setupAcount extends AppCompatActivity {
                 // TODO Call next layout visible animation
                 hideView(user);
                 showView(passwd);
+
+                // Hide login button
+                hideView(b1);
             }
         });
 
@@ -172,17 +184,6 @@ public class setupAcount extends AppCompatActivity {
             public void onClick(View view) {
                 hideView(passwd);
                 showView(contact);
-            }
-        });
-
-        // Finish button click listener
-        Button b1 = (Button) findViewById(R.id.setup_next2);
-        b1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(setupAcount.this, QuickView.class);
-                startActivity(intent);
-                finish();
             }
         });
 
