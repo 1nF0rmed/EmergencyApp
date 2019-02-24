@@ -39,15 +39,16 @@
         app:layout_constraintVertical_bias="0.654">
 
         <android.support.constraint.ConstraintLayout
-            android:layout_width="295dp"
-            android:layout_height="207dp"
+            android:id="@+id/number2"
+            android:layout_width="362dp"
+            android:layout_height="380dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.525"
+            app:layout_constraintHorizontal_bias="0.2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0">
@@ -62,19 +63,40 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/button_press"
-                android:text="@string/action_sign_in"
+                android:text="VERIFY OTP"
                 android:textColor="@color/base_app_female_back"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.415"
+                app:layout_constraintHorizontal_bias="0.852"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0"
+                app:layout_constraintVertical_bias="0.553"
                 tools:text="VERIFY OTP" />
 
+            <Button
+                android:id="@+id/gen_otp1"
+                style="?android:textAppearanceSmall"
+                android:layout_width="149dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/button_press"
+                android:text="GENERATE OTP"
+                android:textColor="@color/base_app_female_back"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.55"
+                tools:text="GENERATE OTP" />
+
             <EditText
-                android:id="@+id/editText1"
+                android:id="@+id/editText_contact_1"
                 android:layout_width="228dp"
                 android:layout_height="49dp"
                 android:layout_marginStart="8dp"
@@ -86,13 +108,13 @@
                 android:inputType="phone"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.324"
+                app:layout_constraintHorizontal_bias="0.305"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.098" />
+                app:layout_constraintVertical_bias="0.085" />
 
             <EditText
-                android:id="@+id/editText4"
+                android:id="@+id/editText_otp_number1"
                 android:layout_width="226dp"
                 android:layout_height="48dp"
                 android:layout_marginStart="8dp"
@@ -104,24 +126,64 @@
                 android:inputType="textPersonName"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.301"
+                app:layout_constraintHorizontal_bias="0.3"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.58" />
+                app:layout_constraintVertical_bias="0.31" />
+
         </android.support.constraint.ConstraintLayout>
 
+        <Button
+            android:id="@+id/setup_next"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="162dp"
+            android:layout_height="51dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/button_press_call"
+            android:text="NEXT"
+            android:textColor="#fff"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.426"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.851" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="Add Emergency Contacts"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.063" />
+
         <android.support.constraint.ConstraintLayout
-            android:layout_width="295dp"
-            android:layout_height="207dp"
+            android:id="@+id/number1"
+            android:layout_width="362dp"
+            android:layout_height="380dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.069">
+            app:layout_constraintVertical_bias="1.0">
 
             <Button
                 android:id="@+id/otp_verify0"
@@ -133,19 +195,39 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/button_press"
-                android:text="@string/action_sign_in"
+                android:text="VERIFY OTP"
                 android:textColor="@color/base_app_female_back"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.415"
+                app:layout_constraintHorizontal_bias="0.852"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0"
-                tools:text="VERIFY OTP" />
+                app:layout_constraintVertical_bias="0.553" />
+
+            <Button
+                android:id="@+id/gen_otp0"
+                style="?android:textAppearanceSmall"
+                android:layout_width="149dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/button_press"
+                android:text="GENERATE OTP"
+                android:textColor="@color/base_app_female_back"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.55"
+                tools:text="GENERATE OTP" />
 
             <EditText
-                android:id="@+id/editText"
+                android:id="@+id/editText_contact_0"
                 android:layout_width="228dp"
                 android:layout_height="49dp"
                 android:layout_marginStart="8dp"
@@ -157,13 +239,13 @@
                 android:inputType="phone"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.324"
+                app:layout_constraintHorizontal_bias="0.305"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.098" />
+                app:layout_constraintVertical_bias="0.085" />
 
             <EditText
-                android:id="@+id/editText3"
+                android:id="@+id/editText_otp_number0"
                 android:layout_width="226dp"
                 android:layout_height="48dp"
                 android:layout_marginStart="8dp"
@@ -175,11 +257,13 @@
                 android:inputType="textPersonName"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.301"
+                app:layout_constraintHorizontal_bias="0.3"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.58" />
+                app:layout_constraintVertical_bias="0.31" />
+
         </android.support.constraint.ConstraintLayout>
+
     </android.support.constraint.ConstraintLayout>
 
 

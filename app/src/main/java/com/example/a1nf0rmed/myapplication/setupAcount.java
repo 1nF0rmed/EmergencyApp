@@ -31,7 +31,7 @@ public class setupAcount extends AppCompatActivity {
     private final static int MESSAGE_UPDATE_TEXT_CHILD_THREAD =1;
 
     private void hideView(final View view) {
-        Animation anim = AnimationUtils.loadAnimation(this, R.anim.fade_out);
+        Animation anim = AnimationUtils.loadAnimation(this, R.anim.slide_animation);
         //use this to make it longer:  animation.setDuration(1000);
         anim.setAnimationListener(new Animation.AnimationListener() {
             @Override
@@ -50,7 +50,7 @@ public class setupAcount extends AppCompatActivity {
     }
 
     private void showView(final View view) {
-        Animation anim = AnimationUtils.loadAnimation(this, R.anim.fade_in);
+        Animation anim = AnimationUtils.loadAnimation(this, R.anim.slide_animation);
         //use this to make it longer:  animation.setDuration(1000);
         anim.setAnimationListener(new Animation.AnimationListener() {
             @Override
@@ -151,18 +151,20 @@ public class setupAcount extends AppCompatActivity {
 
         // Contact Layout
         final ConstraintLayout contact = (ConstraintLayout) findViewById(R.id.constraintLayout6);
-        contact.setVisibility(View.GONE);
+        //contact.setVisibility(View.GONE);
 
         /* Setup the click listeners */
-        final Button b1 = (Button) findViewById(R.id.setup_next2);
+        final Button b1 = (Button) findViewById(R.id.run_login);
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(setupAcount.this, QuickView.class);
+                Intent intent = new Intent(setupAcount.this,  LoginActivity.class);
                 startActivity(intent);
                 finish();
             }
         });
+        showView(b1);
+
         // Setup Next click
         Button next = (Button) findViewById(R.id.setup_next);
         next.setOnClickListener(new View.OnClickListener() {
@@ -184,8 +186,14 @@ public class setupAcount extends AppCompatActivity {
             public void onClick(View view) {
                 hideView(passwd);
                 showView(contact);
+
+                // Start the register phone number intent
+                Intent intent = new Intent(setupAcount.this, RegisterNumber.class);
+                startActivity(intent);
+                finish();
             }
         });
+
 
     }
 

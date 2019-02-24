@@ -21,7 +21,11 @@
         android:roundIcon="@mipmap/launcher_logo_app_boi_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RegisterNumber"></activity>
+        <activity
+            android:name=".workDone"
+            android:label="@string/title_activity_work_done"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".RegisterNumber" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

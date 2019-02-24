@@ -24,4 +24,5 @@
     <string name="title_activity_setup_account">setupAccount</string>
     <string name="title_activity_setup_acount">setupAcount</string>
     <string name="title_activity_quick_view">QuickView</string>
+    <string name="title_activity_work_done">workDone</string>
 </resources>

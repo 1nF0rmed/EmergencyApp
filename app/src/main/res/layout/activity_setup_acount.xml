@@ -27,7 +27,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <Button
-                android:id="@+id/setup_next2"
+                android:id="@+id/run_login"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="262dp"
                 android:layout_height="40dp"
@@ -38,7 +38,6 @@
                 android:background="@drawable/button_press_call"
                 android:text="Already have an account? Log In"
                 android:textColor="#fff"
-                android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.75"
