@@ -22,9 +22,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".PanicActivity"
+            android:label="@string/title_activity_panic"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+
+        <service
+            android:name=".panicInstigator"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
             android:name=".workDone"
             android:label="@string/title_activity_work_done"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".RegisterNumber" />
         <activity android:name=".MainActivity">
             <intent-filter>

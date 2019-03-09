@@ -25,4 +25,5 @@
     <string name="title_activity_setup_acount">setupAcount</string>
     <string name="title_activity_quick_view">QuickView</string>
     <string name="title_activity_work_done">workDone</string>
+    <string name="title_activity_panic">PanicActivity</string>
 </resources>

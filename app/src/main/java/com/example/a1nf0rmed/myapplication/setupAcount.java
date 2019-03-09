@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.provider.ContactsContract;
+import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -17,8 +18,14 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.*;
 
 public class setupAcount extends AppCompatActivity {
 
@@ -29,6 +36,9 @@ public class setupAcount extends AppCompatActivity {
     private Handler updateUIHandler = null;
     // Message type code.
     private final static int MESSAGE_UPDATE_TEXT_CHILD_THREAD =1;
+
+    private FirebaseFirestore db;
+    private String gl_user_name, password;
 
     private void hideView(final View view) {
         Animation anim = AnimationUtils.loadAnimation(this, R.anim.slide_animation);
@@ -142,6 +152,8 @@ public class setupAcount extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setup_acount);
 
+        db = FirebaseFirestore.getInstance();
+
         // Username layout
         final ConstraintLayout user = (ConstraintLayout) findViewById(R.id.constraintLayout3);
 
@@ -170,12 +182,56 @@ public class setupAcount extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // TODO Check if username is valid
+                final EditText user_name = (EditText) findViewById(R.id.signup_user);
+                user_name.setFocusable(false);
+                final String user_s = user_name.getText().toString();
+
+                final ProgressBar pbar = (ProgressBar) findViewById(R.id.progressBarUser);
+                showView(pbar);
+
+                // Run the user name through the user_info firestore collection to check if there is a valid document
+                CollectionReference usersColRef = db.collection("user_info");
+                Query userQuery = usersColRef.whereEqualTo("userID", user_s);
+                userQuery.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if(task.isSuccessful()) {
+                            hideView(pbar);
+                            try {
+                                if (task.getResult().size() > 0) {
+                                    Toast.makeText(setupAcount.this, "Username is already taken!", Toast.LENGTH_SHORT).show();
+                                } else {
+                                    gl_user_name = user_s;
+                                    hideView(user);
+                                    showView(passwd);
+
+                                    // Hide login button
+                                    hideView(b1);
+                                }
+                            } catch (Exception e) {
+                                hideView(user);
+                                showView(passwd);
+
+                                // Hide login button
+                                hideView(b1);
+                            }
+                        } else {
+                            Toast.makeText(setupAcount.this, "Unable to connect", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+
+                // TODO Store the given user name
+
                 // TODO Call next layout visible animation
-                hideView(user);
+                /*hideView(user);
                 showView(passwd);
 
                 // Hide login button
-                hideView(b1);
+                hideView(b1);*/
+
+                user_name.setFocusable(true);
             }
         });
 
@@ -184,11 +240,16 @@ public class setupAcount extends AppCompatActivity {
         done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                EditText password = (EditText) findViewById(R.id.signup_password);
+                if(password.getText().toString().isEmpty()) {
+                    Toast.makeText(setupAcount.this, "Please enter a password", Toast.LENGTH_SHORT).show();
+                }
                 hideView(passwd);
                 showView(contact);
 
                 // Start the register phone number intent
                 Intent intent = new Intent(setupAcount.this, RegisterNumber.class);
+                intent.putExtra("user_name", gl_user_name);
                 startActivity(intent);
                 finish();
             }

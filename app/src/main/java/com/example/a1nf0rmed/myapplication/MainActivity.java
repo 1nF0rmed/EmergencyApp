@@ -50,10 +50,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, "Oh! boy Oh! boy", Toast.LENGTH_SHORT).show();
         }
 
-        SmsManager smsManager = SmsManager.getDefault();
 
-
-        //smsManager.sendTextMessage("9844440544", null, "Hello, I've setup Emergency on my Phone!", null, null);
         /*
         // Check if the preference exists
         if(prefs.contains("firstrun")) {
